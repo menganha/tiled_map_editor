@@ -24,6 +24,5 @@ class MainApp(tk.Tk):
                 self.destroy()
             else:
                 self.tbar.fmenu.SaveProgress() #otherwise, save.
-                self.destroy()
 
 app = MainApp()
