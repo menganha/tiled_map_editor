@@ -4,6 +4,7 @@ This is a simple tile editor for pygame game developers. This program allows the
 ### Dependencies
 #### Tkinter
 Tkinter provides the program with a graphical user interface. To run this script, you will need the Tkinter library installed. 
+
 Windows and MacOS:
   If you are using Windows or MacOS you should already have tkinter built in your python distribution.
 
