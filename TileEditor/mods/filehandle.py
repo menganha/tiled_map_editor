@@ -1,7 +1,6 @@
 import PIL.ImageTk
 import PIL.Image
 from tkinter import NW, messagebox
-import json
 
 class Tile(): #class structure to hold images
     def __init__(self, path, size):
