@@ -1,4 +1,4 @@
- #   Tile Basic. This is the main entry point for  the Tile Basic Tile Editor
+ #   This file is part of Tile Basic. This is the main entry point for  the Tile Basic Tile Editor
  #   Copyright (C) 2021  @Multilingual-Coder
 
 #    Tile Basic is free software: you can redistribute it and/or modify
