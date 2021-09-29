@@ -164,11 +164,11 @@ class TileMap():
             if filetype == ".py" or filetype == ".pyw": # This code writes a python file that loads and draws a map using pygame.
                 output2 = '''import pygame
 
-    class TileMap():
-        def __init__(self, tilesize):
-            pygame.init()
-            self.tilesize = tilesize
-            self.images = []\n'''
+class TileMap():
+    def __init__(self, tilesize):
+        pygame.init()
+        self.tilesize = tilesize
+        self.images = []\n'''
 
                 for i in range(len(pathtypes)): # write a line of code that loads a tile image...
                     if i > 0: #for each tile that the user loaded.
