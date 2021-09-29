@@ -115,3 +115,7 @@ This software is distributed under the GNU General Public Licence. If you redist
 2. State the changes you have made to the software.
 3. Make the source code of the redistributed software available.
 4. Distribute the software under the same licence
+
+This software represents a bit of hard work. Please respect the terms of the Licence when using this software. 
+
+Thank you so much for using Tile Basic!
