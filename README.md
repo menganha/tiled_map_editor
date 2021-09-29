@@ -14,7 +14,7 @@ Linux:
   sudo apt-get install python3-tk
   ```
 #### Pillow
-Pillow provides the program with a quick and easy way to load, draw, and manipulate images. To run this python script, you will need the Pillow imaging library. To install the Pillow, run the following commands:
+Pillow provides the program with a quick and easy way to load, draw, and manipulate images. To run this python script, you will need the Pillow imaging library. To install the Pillow library, run the following commands:
 
 ```
 python3 -m pip install --upgrade pip
@@ -54,7 +54,7 @@ Draw the tiles onto the Canvas as desired. Click and drag to draw multiple tiles
 
 ![Draw Map](https://user-images.githubusercontent.com/71729368/135165098-0afbf8e5-dd7d-4b34-b537-ff615b626f52.jpg)
 
-If you would like to erase any part of your tile map, select the eraser tool by clicking on it. Then click on the tile that you would like to erase. Click and drag to erase multiple tiles. You are currently using the "eraser" tool. If you would like to switch back to the "draw" tool to add more tiles to your map, click a tile icon in the image box, or click the "draw tool icon.
+If you would like to erase any part of your tile map, select the eraser tool by clicking on its icon. Then click on the tile that you would like to erase. Click and drag to erase multiple tiles. You are currently using the "eraser" tool. If you would like to switch back to the "draw" tool to add more tiles to your map, click a tile icon in the image box, or click the "draw" tool icon.
 
 ![Eraser Tool](https://user-images.githubusercontent.com/71729368/135165101-1e16dfc8-e10d-479d-900c-43f3aa5a7483.jpg)
 
@@ -68,13 +68,30 @@ You will be confronted with a dialog box like the one shown below. It will ask y
 
 ![Save Type Dialog](https://user-images.githubusercontent.com/71729368/135165110-477a8049-5830-4db3-af3a-65c1bdc0e5a4.jpg)
 
-Choose a save location and name and click "Save".
+Choose a save location and name; then click "Save".
 
 ![Save File](https://user-images.githubusercontent.com/71729368/135165556-f7b99457-6eca-4083-863a-6f78e71be562.jpg)
 
 #### 5. Using Your Tile Map Code
+When you have saved your tile map, the code in the resulting python file should look something like this.
 
+![ResultingCode](https://user-images.githubusercontent.com/71729368/135184378-10ec1858-623b-4ffd-ba3b-c5998c58e98f.jpg)
 
+To use the code in your game, first add the pygame base code.
+
+![AddPygameBaseCode](https://user-images.githubusercontent.com/71729368/135184373-6d89de7c-64b6-493b-8e8a-2018b826cc68.jpg)
+
+Next define an instance of the TileMap class including a tilesize number in the class definition. This number determines the size for each individual tile drawn to the screen in pixels. In this case, I'm using a size of 16 pixels
+
+![AddClass](https://user-images.githubusercontent.com/71729368/135184367-15ea51bb-b10d-4988-9dae-544c4e0948ba.jpg)
+
+Next run the drawMap() function in the game loop. Include the screen surface to draw to and the location of the tilemap in the function call. Make sure that you call the drawMap() function in the game loop after the code that clears the screen.
+
+![DrawMap](https://user-images.githubusercontent.com/71729368/135184374-bbfd44dc-abc2-44d4-99a3-124820b1c03c.jpg)
+
+If all goes well, you should see your tilemap drawn onto the pygame window.
+
+![ResultDrawn](https://user-images.githubusercontent.com/71729368/135184376-a9307d06-0c93-4843-b300-f67a8cccf4a0.jpg)
 
 #### 6. Open Previous Project
 
@@ -89,3 +106,12 @@ Navigate to the location of the saved file and open it.
 Your tile map will be loaded into the tile editor. You can now edit it and save it again with the new changes.
 
 ![Loaded File](https://user-images.githubusercontent.com/71729368/135165569-6e3bda35-caaa-4134-90ae-4e6d70a8a955.jpg)
+
+## Licence
+
+This software is distributed under the GNU General Public Licence. If you redistribute this software, the licence requires that you:
+
+1. Include a copy of the licence and copyright notice with the redistributed sofware.
+2. State the changes you have made to the software.
+3. Make the source code of the redistributed software available.
+4. Distribute the software under the same licence
