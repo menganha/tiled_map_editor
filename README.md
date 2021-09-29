@@ -119,3 +119,5 @@ This software is distributed under the GNU General Public Licence. If you redist
 This software represents a bit of hard work. Please respect the terms of the Licence when using this software. 
 
 Thank you so much for using Tile Basic!
+
+Contact the developer at codermultilingual@gmail.com
