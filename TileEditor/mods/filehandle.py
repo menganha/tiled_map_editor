@@ -99,12 +99,19 @@ class TileMap():
         filetype = ""
         count=0
         for char in str(path): # find the number of chars proceding the file extension...
-            if char == ".":
+            if char == "." or char == "{":
                 break
             count+=1 # store it in count...
-
         for i in range(len(path) - count): 
-            filetype += path[i + count] # use it to find the path
+            filetype += path[i + count] # ...and use it to find the path
+
+        if filetype != ".py" and filetype != ".pyw" and filetype != ".csv": #set default file type to .py
+            filetype = ".py" #if the user forgot to set his/her filetype when saving
+            p2 = ""          #program automatically uses ".py" extension
+            for i in range(count): #the path must be fixed to match what the user entered
+                p2 += path[i]
+            path = p2 + filetype
+           
         arraydata = []
         if grabtype == "part": # if this save want to compress the map for a final export...
             truncate_row = True # this snippet will cut out all empty columns
