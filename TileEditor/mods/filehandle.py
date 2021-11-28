@@ -1,4 +1,4 @@
- #   This file is part of Tile Basic
+#   This file is part of Tile Basic
  #   Copyright (C) 2021  @Multilingual-Coder
 
 #    Tile Basic is free software: you can redistribute it and/or modify
@@ -80,11 +80,11 @@ class TileMap():
 
             self.NewFile() # clear the program data.
 
-            self.parent.ibox.MakeButton(files) # make buttons for each loaded tile image.
+            self.parent.ibox.imgcanv.MakeButton(files) # make buttons for each loaded tile image.
             for i, row in enumerate(array):
                 for j, elim in enumerate(row):
                     if(int(elim) > 0): # find each tile corresponding to an image
-                        self.parent.ibox.selectTile(int(elim) - 1) 
+                        self.parent.ibox.imgcanv.selectTile(int(elim) - 1) 
                         self.parent.cframe.cmap.setTile((j, i)) # draw it to the screen
         except: # if there is an error loading file...
             # ask user if he/she would like to attempt to contiue anyway.
@@ -225,8 +225,8 @@ class TileMap():
         for i, row in enumerate(self.tilearray):
             for j,tile in enumerate(row):
                 self.tilearray[i][j] = ' ' # clear the tile array.
-        self.parent.ibox.buttons.clear() # clear all tile buttons in the side box.
-        for item in self.parent.ibox.winfo_children():
+        self.parent.ibox.imgcanv.buttons.clear() # clear all tile buttons in the side box.
+        for item in self.parent.ibox.imgcanv.winfo_children():
             item.destroy()
 
-            self.parent.ibox.newbtnpos = (0, 0) # Set the starting position for button placement so original position
+            self.parent.ibox.imgcanv.newbtnpos = (0, 0) # Set the starting position for button placement so original position
