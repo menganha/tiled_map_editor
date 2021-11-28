@@ -31,14 +31,14 @@ class FileMenu(tk.Menu):
         self.add_command(label="New", command = self.FileNew) #make this clear canvas next........
         self.add_command(label="Open Map", command = self.OpenMap)
         self.add_command(label="Save Map", command = self.SaveProgress)
-        self.add_command(label="Open Image(s)", command = parent.parent.ibox.OpenImage)
+        self.add_command(label="Open Image(s)", command = parent.parent.ibox.imgcanv.OpenImage)
         self.add_command(label="Quit", command=self.parent.parent.Quit) #calls for the parent's parent (main window)
                                                                         #to run the Quit function
         self.parent.add_cascade(label = "File", menu=self) #add file menu cascade to the file menu option
 
     def SaveProgress(self):
         option = tk.IntVar() # create a holder for the save options
-        self.dialog = tk.Toplevel(self.parent.parent) # create a dialog to hold the radio buttons
+        self.dialog = tk.Toplevel(self.parent.parent) # create a dialog to hold the radio   
         self.dialog.title("Choose Save Method")
         rb1 = tk.Radiobutton(self.dialog, text = "Save only section of map containing tiles (better for using in a game)", variable = option, value = 1)
         rb1.pack(anchor = tk.W) # add a radio button to dialog box for option 1
@@ -65,7 +65,8 @@ class FileMenu(tk.Menu):
     def OpenMap(self):
         path = '' # make a dialog box with which the user can specify a file to open.
         path = tk.filedialog.askopenfilename(title = "Open Map", filetypes = [("Python Files", ".py .pyw")])
-        if path != '':
+        print(str(path))
+        if str(path) != '()': # if path is not empty
             self.parent.parent.tmap.OpenMap(str(path)) # open specified path.
 
     def FileNew(self):
@@ -76,6 +77,6 @@ class FileMenu(tk.Menu):
                 self.parent.parent.tmap.NewFile() # make new file
             else: # if the user does want to save first
                 self.SaveProgress() #...save file
-                saved = True
         else: # if the program has been saved...
             self.parent.parent.tmap.NewFile() # clear program data 
+        self.parent.parent.saved = True
