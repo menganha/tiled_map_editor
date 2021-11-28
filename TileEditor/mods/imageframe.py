@@ -17,22 +17,37 @@
 #    Contact the developer at codermultilingual@gmail.com
 import tkinter as tk
 import tkinter.filedialog
-from tkinter import RIDGE, FLAT
+from tkinter import RIDGE, FLAT, NSEW
 import os
 from .filehandle import *
 
 class ImageFrame(tk.Frame):
     def __init__(self, parent):
-        tk.Frame.__init__(self, parent, height=200, width=160, borderwidth=5, relief=RIDGE)
-        self.parent = parent #holds access to the parent (main window)
-        self.buttons = [] #holds the UI buttons that represent each tile
+        tk.Frame.__init__(self, parent, height=210, width=180, borderwidth=5, relief=RIDGE)
+        self.parent = parent
         self.currentImagePath = ""
         self.currentImage = ""
+        self.ybar = tk.Scrollbar(self, orient = "vertical") #make a scroll bar for the tilebox
+        self.imgcanv = ImageCanvas(self) #make a canvas for the scroll bar to scroll. this canvas holds the buttons
+        self.ybar["command"] = self.imgcanv.yview
+        self.ybar.grid(column=1,row=0,sticky="ns")
+        self.grid_propagate(False) #keeps frame from shrinking to the size of the objects it contains
+        self.grid(row=0, column=0, padx=10, pady=20, sticky = "n") #sets the position of the image frame
+
+class ImageCanvas(tk.Canvas):
+    def __init__(self, parent):
+        tk.Canvas.__init__(self, parent)
+        self.parent = parent #holds access to the parent (ImageFrame)
+        self["width"] = 160 #set the width to allow 20 pixels of space for the scrollbar
+        self["height"] = 200 #set the height to allow 10 pixels of space for the bottom ridge
+        self.buttons = [] #holds the UI buttons that represent each tile
         self.tilesize = 32
         self.lastDir = ''
         self.newbtnpos = (0, 0)
-        self.grid(row=0, column=0, padx=10, pady=20, sticky = "n") #sets the position of the image frame
-        self.grid_propagate(False) #keeps frame from shrinking to the size of the objects it contains
+        self["scrollregion"] = (0,0,0,1000) #creates an enourmous scroll region for many amounts of tiles
+        self["yscrollcommand"] = self.parent.ybar.set
+        self.grid()
+
     def OpenImage(self):
         if self.lastDir == '':
             self.lastDir = os.path.expanduser("~") + "/Pictures"#access user's home dir and go to the pictures folder
@@ -50,9 +65,9 @@ class ImageFrame(tk.Frame):
                 self.newbtnpos = (0, self.newbtnpos[1] + self.tilesize+2) #every 4 buttons, go a line down
 
     def selectTile(self, i):
-        self.currentImagePath = str(self.buttons[i].path) #sets the path to the currently selected image
-        self.currentImage = self.buttons[i].tile.image #sets the currently selected image
-        self.parent.tbox.tool = "click" #switch to the selecting tool if a tile is selected
+        self.parent.currentImagePath = str(self.buttons[i].path) #sets the path to the currently selected image
+        self.parent.currentImage = self.buttons[i].tile.image #sets the currently selected image
+        self.parent.parent.tbox.tool = "click" #switch to the selecting tool if a tile is selected
 
 class TileButton(tk.Button):
     def __init__(self, parent, path, plc):
@@ -60,7 +75,7 @@ class TileButton(tk.Button):
         self.parent = parent
         self.plc = plc
         self.path = path
-        self.place(x=self.plc[0], y=self.plc[1])
+        self.parent.create_window(self.plc[0], self.plc[1], window = self, anchor = tk.NW) #create a button object on the imagecanvas scroll region. 
         self.tile = Tile(self.path, self.parent.tilesize) #load the tile our button will represent
         self["image"] = self.tile.image #make the button display the image of the tile it represents
         self["command"] = lambda i = len(parent.buttons): parent.selectTile(i) #make button's tile the selected one
