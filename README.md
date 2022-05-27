@@ -120,4 +120,6 @@ This software represents a bit of hard work. Please respect the terms of the Lic
 
 Thank you so much for using Tile Basic!
 
-Contact the developer at codermultilingual@gmail.com
+A big thank you to Bill Roberts for his amazing code snippets.
+
+Contact the main developer at codermultilingual@gmail.com
