@@ -71,11 +71,11 @@ Then select the eraser tool and click the tile that you don't want. Hold the lef
 
 Once you are done editing your tilemap, go to the file menu and click "Save Map".
 
-![Save Map]![Eraser Tool](https://github.com/Multilingual-Coder/tilebasic/blob/main/content/images/Step10.jpg)
+![Save Map](https://github.com/Multilingual-Coder/tilebasic/blob/main/content/images/Step10.jpg)
 
 You will be confronted with a dialog box like the one shown below. It will ask you if you want to save only the section of your map containing tiles or if you would like to save the entire map (including empty rows). If you are going to use your tile map in your game immediately, it might be best to save the map without any empty rows as these might get in your way when you try to draw the map to your screen in your game. If, however, you want to save your map for later editing before you use it in your game, it is best to save the entire map with the empty rows.
 
-![Save Type Dialog]![Eraser Tool](https://github.com/Multilingual-Coder/tilebasic/blob/main/content/images/Step11.jpg)
+![Save Type Dialog](https://github.com/Multilingual-Coder/tilebasic/blob/main/content/images/Step11.jpg)
 
 Choose a save location and name; then click "Save".
 
@@ -114,7 +114,7 @@ Navigate to the location of the saved file and open it.
 
 Your tile map will be loaded into the tile editor. You can now edit it and save it again with the new changes.
 
-![Loaded File]![Eraser Tool](https://github.com/Multilingual-Coder/tilebasic/blob/main/content/images/Step15.jpg)
+![Loaded File](https://github.com/Multilingual-Coder/tilebasic/blob/main/content/images/Step15.jpg)
 
 ## Licence
 
