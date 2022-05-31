@@ -1,5 +1,5 @@
  #   This file is part of Tile Basic
- #   Copyright (C) 2021  @Multilingual-Coder
+ #   Copyright (C) 2021-2022  @Multilingual-Coder
 
 #    Tile Basic is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -16,6 +16,7 @@
 #    
 #    Contact the developer at codermultilingual@gmail.com
 import tkinter as tk
+from tkinter import messagebox
 
 class TopBar(tk.Menu):
     def __init__(self, parent):
@@ -71,7 +72,7 @@ class FileMenu(tk.Menu):
 
     def FileNew(self):
         if self.parent.parent.saved == False: # if the program has not been saved...
-            mbox = tk.messagebox(title = "Save File", # allow the user to specify if he/she would like to save progress first.
+            mbox = tk.messagebox.askquestion(title = "Save File", # allow the user to specify if he/she would like to save progress first.
                                message="Some changes are unsaved! Would you like to save your progress?")
             if mbox == "no": # if not...
                 self.parent.parent.tmap.NewFile() # make new file
