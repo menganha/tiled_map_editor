@@ -1,5 +1,6 @@
- #   This file is part of Tile Basic. This is the main entry point for  the Tile Basic Tile Editor
- #   Copyright (C) 2021  @Multilingual-Coder
+#   This file is part of Tile Basic. This is the main entry point for  the Tile Basic Tile Editor
+#   Copyright (C) 2021-2022  @Multilingual-Coder
+#   Copyright (C) 2022 Bill Roberts
 
 #    Tile Basic is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -27,7 +28,7 @@ class MainApp(tk.Tk):
         self.ibox = ImageFrame(self) #creates the box that holds our tiles
         self.tbox = ToolFrame(self) #creates a box that holds our tools
         self.tbar = TopBar(self) #creates the window's topbar
-        self.cframe = CanvasFrame(self)
+        self.cframe = CanvasFrame(self, self.title)
         self.protocol("WM_DELETE_WINDOW", self.Quit) #changes what the window does when we click to close it
         self.mainloop()
 
