@@ -1,5 +1,6 @@
  #   This file is part of Tile Basic
- #   Copyright (C) 2021  @Multilingual-Coder
+ #   Copyright (C) 2021-2022  @Multilingual-Coder
+ #   Copyright (C) 2022 Bill Roberts
 
 #    Tile Basic is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -67,8 +68,7 @@ class ImageCanvas(tk.Canvas):
     def selectTile(self, i):
         self.parent.currentImagePath = str(self.buttons[i].path) #sets the path to the currently selected image
         self.parent.currentImage = self.buttons[i].tile.image #sets the currently selected image
-        self.parent.parent.tbox.tool = "click" #switch to the selecting tool if a tile is selected
-
+        
 class TileButton(tk.Button):
     def __init__(self, parent, path, plc):
         tk.Button.__init__(self, parent, relief=FLAT)
