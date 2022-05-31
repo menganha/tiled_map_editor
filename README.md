@@ -28,7 +28,7 @@ Once Pillow and Tkinter are installed, you should be ready to run the program.
 
 To launch the Python script, run TileEditor.pyw. You will be greeted by the following screen.
 
-![Opening Screen](https://user-images.githubusercontent.com/71729368/135165738-bd5fa826-2ee9-4518-9bf0-2fc0a2411eb9.jpg)
+![Opening Screen][(https://github.com/Multilingual-Coder/tilebasic/blob/main/content/images/Step2.jpg)]
 
 
 
