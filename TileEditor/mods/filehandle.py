@@ -1,5 +1,5 @@
 #   This file is part of Tile Basic
- #   Copyright (C) 2021  @Multilingual-Coder
+#   Copyright (C) 2021-2022  @Multilingual-Coder
 
 #    Tile Basic is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -85,9 +85,10 @@ class TileMap():
                 for j, elim in enumerate(row):
                     if(int(elim) > 0): # find each tile corresponding to an image
                         self.parent.ibox.imgcanv.selectTile(int(elim) - 1) 
-                        self.parent.cframe.cmap.setTile((j, i)) # draw it to the screen
+                        self.parent.cframe.cmap.tilepos = (j, i)
+                        self.parent.cframe.cmap.setTile() # draw it to the screen
         except: # if there is an error loading file...
-            # ask user if he/she would like to attempt to contiue anyway.
+                # ask user if he/she would like to attempt to contiue anyway.
             mbox = messagebox.askyesno(title = "Loading Error", message = "There was an error loading file. The file has either been changed or is empty. Would you like to load it anyway?")
             if mbox == "no": # if not..
                 self.NewFile() # clear the slate.
@@ -230,3 +231,4 @@ class TileMap():
             item.destroy()
 
             self.parent.ibox.imgcanv.newbtnpos = (0, 0) # Set the starting position for button placement so original position
+        self.parent.tbox.click()
