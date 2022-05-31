@@ -32,7 +32,7 @@ To launch the Python script, run TileEditor.pyw. You will be greeted by the foll
 
 
 
-The box on the top left is the image box. It will hold the images for tiles to be used in your game's tile map. To the right, you will see a dark grey box with scrollbars around it and a light grey grid overlayed on it. This is the canvas where you will place your tiles to form a tilemap. On the bottom left you will see a box with two icons in it. One looks like a cursor outline, and the other looks like an eraser outline. The cursor icon represents the "draw" tool, and the eraser icon represents the "eraser" tool. These tools will be used to edit your tile map visually on the canvas.
+The box on the top left is the image box. It will hold the images for tiles to be used in your game's tile map. To the right, you will see a dark grey box with scrollbars around it and a light grey grid overlayed on it. This is the canvas where you will place your tiles to form a tilemap. On the bottom left you will see a box with three icons in it. One looks like a cursor outline, the second looks like an eraser outline, the third looks like a cursor with a selection box. The cursor icon represents the "draw" tool, the eraser icon represents the "eraser" tool, and the cursor with the selection box represents the "box fill" tool. These tools will be used to edit your tile map visually on the canvas.
 
 #### 2. Opening Tile Images
 To get started go to the file menu and select "Open Image(s)" as shown below. If you are making a tilemap for a game, it is recommended that you first place all of your tile images in the directory you will be using for the images used in the game. This is because the tilemap editor will be remembering the images based on their path. So if you move one of the images later, the tilemap editor will not know how to find it.
@@ -50,7 +50,7 @@ The Selected images will be loaded into the image box as shown below. Click one 
 
 #### 3. Tools and Map Editing
 
-Draw the tiles onto the Canvas as desired. Move the mouse while holding the left mouse button to draw multiple tiles. You are currently using the "draw" tool. Notice how the draw tool arrow is highlighted in red.
+Draw the tiles onto the Canvas as desired. Move the mouse while holding the left mouse button to draw multiple tiles. You are currently using the "draw" tool. Notice how the draw tool icon is highlighted in red. This means that it is currently active. If you switch to another tool at any point, it will be highlighted in red to show that it is active.
 
 ![Draw Map](https://github.com/Multilingual-Coder/tilebasic/blob/main/content/images/Step6.jpg)
 
@@ -79,7 +79,7 @@ You will be confronted with a dialog box like the one shown below. It will ask y
 
 Choose a save location and name; then click "Save".
 
-![Eraser Tool](https://github.com/Multilingual-Coder/tilebasic/blob/main/content/images/Step12.jpg)
+![Save Map](https://github.com/Multilingual-Coder/tilebasic/blob/main/content/images/Step12.jpg)
 
 #### 5. Using Your Tile Map Code
 When you have saved your tile map, the code in the resulting python file should look something like this.
