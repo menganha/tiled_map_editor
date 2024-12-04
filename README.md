@@ -131,4 +131,4 @@ Thank you so much for using Tile Basic!
 
 A big thank you to Bill Roberts for his amazing code snippets.
 
-Contact the main developer at codermultilingual@gmail.com
+Contact the main developer at muskratmutated@gmail.com
