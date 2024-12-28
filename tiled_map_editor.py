@@ -22,7 +22,7 @@ from mods import *
 class MainApp(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self) #Inherits the main window from tkinnter
-        self.saved = True #holds a value for whether or not  the tilemap has been saved
+        self.saved = True #holds a value for whether the tilemap has been saved
         self.title("Tile Basic")
         self.tmap = TileMap(self, 125) #creates an object that holds the images, canvas objects, and paths for our tilemap
         self.ibox = ImageFrame(self) #creates the box that holds our tiles
@@ -43,4 +43,5 @@ class MainApp(tk.Tk):
             else:
                 self.tbar.fmenu.SaveProgress() #otherwise, save.
 
-app = MainApp()
+if __name__ == '__main__':
+    app = MainApp()
